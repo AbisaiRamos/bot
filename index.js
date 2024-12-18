@@ -1,4 +1,4 @@
-const toke2 = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70';
+const toke2 = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70'; //abisai
 const token = '7607469719:AAEKWwwJb1lkVfz5rIhqZQ7VR4yJjAm4jt8'
 const apiURL = `https://api.telegram.org/bot${token}`;
 import http from 'http';
