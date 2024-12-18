@@ -9,6 +9,10 @@ import { Buffer } from 'buffer';
 const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
+    if(req.method ==='GET' && req.url === '/webhook') {
+        request.write('Hola')
+    }
+
     if (req.method === 'POST' && req.url === '/webhook') {
         let body = '';
 
