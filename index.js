@@ -10,6 +10,7 @@ const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
     if (req.method === 'POST' && req.url === '/webhook') {
+        console.log(0)
         let body = '';
 
         req.on('data', chunk => {
