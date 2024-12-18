@@ -30,7 +30,7 @@ export default function sendMessageToChat(username, password, token) {
                 console.error(e);
             });
     
-            request.write(reply);
+            request.write(message);
             request.end();
     console.log(message)
 
