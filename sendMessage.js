@@ -18,6 +18,11 @@ export default function sendMessageToChat(username, password, token) {
             'Content-Length': Buffer.byteLength(message)
         }
     };
+
+    const request = https.request(options); 
+    request.on('error', e => { console.error(e); }); 
+    request.write(message); 
+    request.end()
     console.log(message)
 
 }
