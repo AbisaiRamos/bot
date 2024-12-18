@@ -17,7 +17,7 @@ app.post('/webhook', (req, res) => {
     const message = req.body.message;
     if (message) {
         const chatId = message.chat.id;
-        const text = 'Hola desde el servidor';
+        const text = 'Hola, este es un mensaje de prueba desde el servidor, mandame un mensaje';
 
         const reply = JSON.stringify({
             chat_id: chatId,
