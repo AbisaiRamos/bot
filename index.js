@@ -3,8 +3,8 @@ import https from 'https';
 import { Buffer } from 'buffer';
 
 const app = express();
-// const token = '7607469719:AAEKWwwJb1lkVfz5rIhqZQ7VR4yJjAm4jt8';
-const token = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70'
+const token = '7607469719:AAEKWwwJb1lkVfz5rIhqZQ7VR4yJjAm4jt8';
+// const token = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70'
 const port = process.env.PORT || 3000;
 
 app.use(express.json());  // Middleware para parsear JSON
