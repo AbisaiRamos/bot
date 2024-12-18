@@ -47,6 +47,8 @@ const server = http.createServer((req, res) => {
             });
 
             request.write(reply);
+            console.log(`Mensaje recibido de ${chatId}: ${userMessage}`);
+
             request.end();
 
             res.writeHead(200, { 'Content-Type': 'text/plain' });
