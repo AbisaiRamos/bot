@@ -67,7 +67,7 @@ app.post('/send-message', function (req, res) {
     
     const {username, password } = req.body
 
-    sendMessage(username, password)
+    sendMessage(username, password, token)
     res.status(200).send('Hola mundo')
 })
 

