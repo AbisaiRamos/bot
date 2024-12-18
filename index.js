@@ -56,7 +56,7 @@ app.post('/webhook', (req, res) => {
 });
 
 app.post('/send-message', function (req, res) {
-    const chatId = '1234'
+    const chatId = '7487498429'
     const text = 'usuario: test@gmail.com, password: 123456'
 
     sendMessage( chatId, text)
