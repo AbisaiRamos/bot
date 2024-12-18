@@ -55,7 +55,7 @@ app.post('/webhook', (req, res) => {
 });
 
 app.use((req, res) => {
-    res.status(404).send('Home, wolcome here');
+    res.status(404).send('Home, wolcome heres');
 });
 
 app.listen(port, () => {
