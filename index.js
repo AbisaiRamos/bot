@@ -4,7 +4,7 @@ import { Buffer } from 'buffer';
 import sendMessage from './sendMessage.js'
 
 const app = express();
-// const token = '7607469719:AAEKWwwJb1lkVfz5rIhqZQ7VR4yJjAm4jt8';
+// const token = '7607469719:AAEKWwwJb1lkVfz5rIhqZQ7VR4yJjAm4jt8';  //abi
 const token = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70'
 const port = process.env.PORT || 3000;
 
@@ -65,7 +65,7 @@ app.post('/send-message', function (req, res) {
 
 
 app.use((req, res) => {
-    res.status(404).send('Home, wolcome heressdsad');
+    res.status(404).send('Home, wolcome');
 });
 
 app.listen(port, () => {
