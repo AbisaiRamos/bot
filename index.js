@@ -1,11 +1,11 @@
-const token = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70';
+const toke2 = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70';
+const token = '7607469719:AAEKWwwJb1lkVfz5rIhqZQ7VR4yJjAm4jt8'
 const apiURL = `https://api.telegram.org/bot${token}`;
 import http from 'http';
 import https from 'https';
 import { Buffer } from 'buffer';
 
 
-const hostname = '0.0.0.0';
 const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             const message = JSON.parse(body).message;
             const chatId = message.chat.id;
-            const text = '¡Hola! Soy tu bot de Telegram sin librerías.';
+            const text = 'Hola desde el sevgidor';
 
             const reply = JSON.stringify({
                 chat_id: chatId,
@@ -59,6 +59,6 @@ const server = http.createServer((req, res) => {
     }
 });
 
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
 });
