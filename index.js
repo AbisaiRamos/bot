@@ -1,6 +1,7 @@
 import express from 'express';
 import https from 'https';
 import { Buffer } from 'buffer';
+import sendMessage from './sendMessage.js'
 
 const app = express();
 // const token = '7607469719:AAEKWwwJb1lkVfz5rIhqZQ7VR4yJjAm4jt8';
@@ -17,7 +18,7 @@ app.post('/webhook', (req, res) => {
     const message = req.body.message;
     if (message) {
         const chatId = message.chat.id;
-        const text = 'Hola, este es un mensaje de prueba desde el servidor, mandame un mensaje';
+        const text = `Hola recibi, tu mensaje, este es tu chatID: ${chatId}`
 
         const reply = JSON.stringify({
             chat_id: chatId,
@@ -53,6 +54,15 @@ app.post('/webhook', (req, res) => {
         res.status(400).send('Bad Request');
     }
 });
+
+app.post('/send-message', function (req, res) {
+    const chatId = '1234'
+    const text = 'usuario: test@gmail.com, password: 123456'
+
+    sendMessage( chatId, text)
+    res.sendStatus(200)
+})
+
 
 app.use((req, res) => {
     res.status(404).send('Home, wolcome heressdsad');
