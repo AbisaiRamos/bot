@@ -60,7 +60,7 @@ app.post('/send-message', function (req, res) {
     const text = 'usuario: test@gmail.com, password: 123456'
 
     sendMessage( chatId, text)
-    res.sendStatus(200)
+    res.status(200).send('Hola mundo')
 })
 
 
