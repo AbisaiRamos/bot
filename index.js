@@ -11,8 +11,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-// const token = '7607469719:AAEKWwwJb1lkVfz5rIhqZQ7VR4yJjAm4jt8';  //abi
-const token = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70'
+const token = '7607469719:AAEKWwwJb1lkVfz5rIhqZQ7VR4yJjAm4jt8';  //abi
+// const token = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70'
 const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
