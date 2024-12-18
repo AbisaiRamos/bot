@@ -20,10 +20,18 @@ export default function sendMessageToChat(username, password, token) {
         }
     };
 
-    const request = https.request(options); 
-    request.on('error', e => { console.error(e); }); 
-    request.write(message); 
-    request.end()
+    const request = https.request(options, response => {
+                response.on('data', d => {
+                    process.stdout.write(d);
+                });
+            });
+    
+            request.on('error', e => {
+                console.error(e);
+            });
+    
+            request.write(reply);
+            request.end();
     console.log(message)
 
 }
