@@ -10,7 +10,6 @@ const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
     if (req.method === 'POST' && req.url === '/webhook') {
-        console.log(0)
         let body = '';
 
         req.on('data', chunk => {
@@ -18,9 +17,10 @@ const server = http.createServer((req, res) => {
         });
 
         req.on('end', () => {
+            console.log(JSON.parse(body))
             const message = JSON.parse(body).message;
             const chatId = message.chat.id;
-            const text = 'Hola desde el sevgidor';
+            const text = 'Hola desde el servidor';
 
             const reply = JSON.stringify({
                 chat_id: chatId,
@@ -48,12 +48,12 @@ const server = http.createServer((req, res) => {
             });
 
             request.write(reply);
-            console.log(`Mensaje recibido de ${chatId}: ${userMessage}`);
+            console.log(`Mensaje recibido de ${chatId}: ${text}`);
 
             request.end();
 
             res.writeHead(200, { 'Content-Type': 'text/plain' });
-            res.end('OK');
+            res.end(reply);
         });
     } else {
         res.statusCode = 404;
