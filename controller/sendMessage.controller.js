@@ -9,11 +9,11 @@ export function sendMessage(req, res) {
     console.log(req.body)
     bot.sendMessage(chatID, JSON.stringify(req.body));
     
-    bot.on('message', (msg) => {
-        const chatId = chatID || msg.chat.id;
-        const reponse = `Hola ${msg.from.first_name}, recibi tu mensaje`;
+    //bot.on('message', (msg) => {
+    //    const chatId = chatID || msg.chat.id;
+    //    const reponse = `Hola ${msg.from.first_name}, recibi tu mensaje`;
         
-        bot.sendMessage(chatId, reponse);
-    })
+     //   bot.sendMessage(chatId, reponse);
+   // })
     res.send('Mensaje enviado');
 }
