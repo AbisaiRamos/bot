@@ -21,9 +21,9 @@ app.use('/', expressRouter)
 
 
 app.post(`/bot${token}`, (req, res) => { 
-     bot.processUpdate(req.body);
+     //bot.processUpdate(req.body);
+consolé.log(req.body)
      bot.sendMessage(req.body.message.chat.id,req.body)
-     consolé.log(req.body)
      res.sendStatus(200); 
 });
 
