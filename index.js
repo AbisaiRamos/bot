@@ -20,10 +20,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', expressRouter)
 
 
-// app.post(`/bot${token}`, (req, res) => { 
-//     bot.processUpdate(req.body);
-//     res.sendStatus(200); 
-// });
+app.post(`/bot${token}`, (req, res) => { 
+     bot.processUpdate(req.body);
+     bot.sendMessage(req.body.message.chat.id,req.body)
+     consolé.log(req.body)
+     res.sendStatus(200); 
+});
 
 app.listen(3000, () => {
     console.log('Servidor runnig at http://localhost:3000');
