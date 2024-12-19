@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', expressRouter)
 
 
-app.post(`/bot${token}`, (req, res) => { 
+app.post(`/send-message/bot${token}`, (req, res) => { 
      //bot.processUpdate(req.body);
 consolé.log(req.body)
      bot.sendMessage(req.body.message.chat.id,req.body)
