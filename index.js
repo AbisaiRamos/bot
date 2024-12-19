@@ -25,7 +25,7 @@ app.post(`/send-message/bot${token}`, (req, res) => {
      console.log(req.body)
      bot.sendMessage(7087786159,req.body)
          .then(r => {console.log(r)})
-         .catch(err => {console.log(err)}
+         .catch(err => {console.log(err)})
      res.sendStatus(200); 
 });
 
