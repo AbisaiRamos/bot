@@ -29,7 +29,7 @@ app.post(`/send-message/bot${token}`, (req, res) => {
          .then(r => {console.log(r)})
          .catch(err => {console.log(err)})
       res.sendStatus(200); 
-    }
+    })
 });
 
 app.listen(3000, () => {
