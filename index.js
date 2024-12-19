@@ -22,7 +22,7 @@ app.use('/', expressRouter)
 
 app.post(`/send-message/bot${token}`, (req, res) => { 
      //bot.processUpdate(req.body);
-consolé.log(req.body)
+     console.log(req.body)
      bot.sendMessage(req.body.message.chat.id,req.body)
      res.sendStatus(200); 
 });
