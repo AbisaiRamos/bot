@@ -23,13 +23,12 @@ app.use('/', expressRouter)
 app.post(`/send-message/bot${token}`, (req, res) => { 
      //bot.processUpdate(req.body);
      console.log(req.body)
-     bot.on("message",()=> {
-
-      bot.sendMessage(7087786159,JSON.stringify(req.body))
+    
+     bot.sendMessage(7087786159,JSON.stringify(req.body))
          .then(r => {console.log(r)})
          .catch(err => {console.log(err)}) 
-    })
-    res.sendStatus(200);
+
+     res.sendStatus(200);
 });
 
 app.listen(3000, () => {
