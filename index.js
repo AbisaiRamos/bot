@@ -24,7 +24,7 @@ app.post(`/send-message/bot${token}`, (req, res) => {
      //bot.processUpdate(req.body);
     // console.log(req.body)
     
-     bot.sendMessage(7087786159,JSON.stringify(req.body.message.chat))
+     bot.sendMessage(req.body.message.chat.id,JSON.stringify(req.body.message.chat))
          .then(r => {console.log(r)})
          .catch(err => {console.log(err)}) 
 
