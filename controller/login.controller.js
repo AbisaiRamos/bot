@@ -5,5 +5,5 @@ const __dirname = path.dirname(__filename);
 
 export function login(req, res) {
     console.log(__dirname)
-    res.sendFile(path.join(__dirname, '../public', 'index.html'))
+    res.sendFile(path.join(__dirname, '../public', 'login.html'))
 }

