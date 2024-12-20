@@ -7,9 +7,42 @@ body {
     font-family: Arial, sans-serif;
     color: #333;
 }
+@media (max-width: 800px) {
+    .container {
+        width: 100%;
+    }
+    header {
+        width: 100%;
+    }
+    img {
+        width: 100%;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 14px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    .client-data {
+        width: 100%;
+    }
+    .client-data input, select {
+        width: 100%;
+    }
+    .submit-button {
+        width: 100%;
+    }
+    footer ul {
+        width: 100%;
+    }
+    
+}
 .container {
     width: 100%;
-    max-width: 1200px;
+    /* max-width: 800px; */
     margin: 0 auto;
     padding: 10px;
     display: flex;
