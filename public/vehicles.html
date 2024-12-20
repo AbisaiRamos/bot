@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/vehicles.css">
+    <title>Precalificate</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="/img/carros.png" alt="sello" class="carros">
+            <h1>¡MÓNTATE EN LA AVENTURA!</h1>
+            <h3>VEN A DISFRUTAR DE NUESTRA SEGUNDA</h3>
+            <H2>AUTOFERIA DE VEHÍCULOS NUEVOS Y USADOS</H2>
+        </header>
+        <main>
+            <form action="" method="post">
+                <div class="client-data">
+                    <div class="input-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" id="name" placeholder="Nombre">
+                    </div>
+                    <div class="input-group">
+                        <label for="lastname">Apellido</label>
+                        <input type="text" name="lastname" id="lastname" placeholder="Apellido">
+                    </div>
+                    <div class="input-group">
+                        <label for="cedula">Cedula</label>
+                        <input type="text" name="cedula" id="cedula" placeholder="Cedula">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Correo electronico</label>
+                        <input type="email" name="email" id="email" placeholder="Correo electronico">
+                    </div>
+                </div>
+                <div class="car-data">
+                    <div class="input-group">
+                        <label for="edad">Cuantos años?</label>
+                        <select name="years" id="years">
+                            <option value="3">3 años</option>
+                            <option value="4">4 años</option>
+                            <option value="5">5 años</option>
+                            <option value="6">6 años</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Telefono</label>
+                        <input type="tel" name="phone" id="phone" placeholder="(809) 123-4567">
+                    </div>
+                    <div class="input-group">
+                        <label for="marca">Marca del Vehiculo</label>
+                        <select id="marcaVehiculo" name="marcaVehiculo" required="">
+                            <option value="0">Seleccione una Marca
+                            </option>
+                            <option value="1">Acura
+                            </option>
+                            <option value="2">Alfa Romeo
+                            </option>
+                            <option value="5">Audi
+                            </option>
+                            <option value="120">Bestune
+                            </option>
+                            <option value="8">BMW
+                            </option>
+                            <option value="63">Brilliance
+                            </option>
+                            <option value="9">Buick
+                            </option>
+                            <option value="65">BYD
+                            </option>
+                            <option value="10">Cadillac
+                            </option>
+                            <option value="114">Can-Am
+                            </option>
+                            <option value="88">Changan
+                            </option>
+                            <option value="68">Chery
+                            </option>
+                            <option value="11">Chevrolet
+                            </option>
+                            <option value="12">Chrysler
+                            </option>
+                            <option value="69">Citroen
+                            </option>
+                            <option value="13">Daewoo
+                            </option>
+                            <option value="14">Daihatsu
+                            </option>
+                            <option value="123">Datsun
+                            </option>
+                            <option value="15">Dodge
+                            </option>
+                            <option value="71">Dongfeng
+                            </option>
+                            <option value="126">Ducati
+                            </option>
+                            <option value="18">Fiat
+                            </option>
+                            <option value="19">Ford
+                            </option>
+                            <option value="99">ForLand
+                            </option>
+                            <option value="128">Forthing
+                            </option>
+                            <option value="72">Freightliner
+                            </option>
+                            <option value="125">Gac
+                            </option>
+                            <option value="134">Geely
+                            </option>
+                            <option value="21">GMC
+                            </option>
+                            <option value="122">Harley-Davidson
+                            </option>
+                            <option value="86">Hino
+                            </option>
+                            <option value="23">Honda
+                            </option>
+                            <option value="25">Hyundai
+                            </option>
+                            <option value="26">Infiniti
+                            </option>
+                            <option value="89">International
+                            </option>
+                            <option value="27">Isuzu
+                            </option>
+                            <option value="90">Jac
+                            </option>
+                            <option value="29">Jeep
+                            </option>
+                            <option value="127">Jetour
+                            </option>
+                            <option value="74">Jin-Bei
+                            </option>
+                            <option value="102">Kawasaki
+                            </option>
+                            <option value="30">Kia
+                            </option>
+                            <option value="135">KTM
+                            </option>
+                            <option value="132">KYC
+                            </option>
+                            <option value="33">Land Rover
+                            </option>
+                            <option value="34">Lexus
+                            </option>
+                            <option value="76">Lifan
+                            </option>
+                            <option value="35">Lincoln
+                            </option>
+                            <option value="111">Mack
+                            </option>
+                            <option value="37">Maserati
+                            </option>
+                            <option value="121">Maxus
+                            </option>
+                            <option value="39">Mazda
+                            </option>
+                            <option value="62">Mercedes-Benz
+                            </option>
+                            <option value="78">MG
+                            </option>
+                            <option value="42">MINI
+                            </option>
+                            <option value="43">Mitsubishi
+                            </option>
+                            <option value="129">Mountain Raise
+                            </option>
+                            <option value="44">Nissan
+                            </option>
+                            <option value="46">Peugeot
+                            </option>
+                            <option value="47">Plymouth
+                            </option>
+                            <option value="49">Porsche
+                            </option>
+                            <option value="133">Ram
+                            </option>
+                            <option value="112">Samsung
+                            </option>
+                            <option value="81">Seat
+                            </option>
+                            <option value="91">Shineray
+                            </option>
+                            <option value="130">Sinotruk
+                            </option>
+                            <option value="83">SsangYong
+                            </option>
+                            <option value="55">Subaru
+                            </option>
+                            <option value="56">Suzuki
+                            </option>
+                            <option value="124">SWM
+                            </option>
+                            <option value="119">Tesla
+                            </option>
+                            <option value="57">Toyota
+                            </option>
+                            <option value="59">Volkswagen
+                            </option>
+                            <option value="60">Volvo
+                            </option>
+                            <option value="107">Yamaha
+                            </option>
+                            <option value="118">ZXAuto
+                            </option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="model">Año del Vehiculo</label>
+                        <input type="number" name="2024" id="model" placeholder="2024">
+                    </div>
+                    <div class="input-group">
+                        <label for="select">Seleccionar</label>
+                        <select name="select" id="select">
+                            <option value="0" selected>Escoge una opcion</option>
+                            <option value="1">Inicial efectivo</option>
+                            <option value="2">Inicial en cuenta</option>
+                            <option value="3">No tengo inicial</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="mount">Monto de la financiacion</label>
+                        <input type="number" name="mount" id="mount" placeholder="">
+                    </div>
+                    <div class="input-group">
+                        <label for="reference-name">Nombre de referancia</label>
+                        <input type="text" name="reference" id="reference" placeholder="Referencia">
+                    </div>
+                    <div class="input-group">
+                        <label for="reference-lastname">Apellido de referencia</label>
+                        <input type="text" name="reference-lastname" id="reference-lastname" placeholder="Referencia">
+                    </div>
+                    <div class="input-group">
+                        <label for="padresesco">Padrecesco</label>
+                        <input type="text" name="padresco" id="padresco" placeholder="Padresco">
+                    </div>
+                    <div class="input-group">
+                        <label for="distribuidor">Distribuidor asociado</label>
+                        <input type="text" name="distribuidor" id="distribuidor" placeholder="">
+                    </div>
+                    <div class="input-group">
+                        <label for="code-distribuidor">Codigo de distribuidor</label>
+                        <input type="text" name="code-distribuidor" id="code-distribuidor" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Validar solicitud" class="submit-button">
+                </div>
+                <div class="form-group">
+                    <span class="message"></span>
+                </div>
+            </form>
+        </main>
+    </div>
+    <footer>
+        <ul>
+            <li>CONTACTO</li>
+            <li>Telefono: 809960212</li>
+            <li>Encuentra una oficina</li>
+            <li>contacto@autoferia.com</li>
+        </ul>
+    </footer>
+</body>
+
+</html>

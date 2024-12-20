@@ -21,13 +21,9 @@ app.use('/', expressRouter)
 
 
 app.post(`/send-message/bot${token}`, (req, res) => { 
-     //bot.processUpdate(req.body);
-    // console.log(req.body)
-    
      bot.sendMessage(req.body.message.chat.id,JSON.stringify(req.body.message.chat))
          .then(r => {console.log(r)})
          .catch(err => {console.log(err)}) 
-
      res.sendStatus(200);
 });
 

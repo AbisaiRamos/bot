@@ -15,6 +15,7 @@ header {
     height: 50px;
     background-color: #f9f9f9;
     border-top: /*solid 1px #123054*/solid 0px #123054;
+    margin-bottom: 18px;
 }
 header ul {
     display: flex;
@@ -22,7 +23,7 @@ header ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 45px;
+    line-height: 40px;
     height: 50px;
     vertical-align: middle;
     font-family: 'Open Sans', sans-serif;
@@ -52,13 +53,13 @@ img.logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 630px;
+    width: 639px;
     height: 466px;
     margin: auto;
 }
 
 .form, .form-img {
-    width: 313px;
+    width: 50%;
     display: flex;
     flex-direction: column;
     border-radius: 1px;
@@ -70,6 +71,12 @@ img.logo {
 }
 .form-img {
     border: solid 8px #ffffff;
+}
+img {
+    width: 120%;
+    height: 120%;
+    margin-left: -27px;
+    margin-top: -18px;
 }
 p {
     background-color: #00AEF0;
@@ -85,7 +92,8 @@ p {
     line-height: 45px;
 }
 form {
-    padding: 10px;
+    padding: 15px;
+    padding-top: 5px;
 }
 .input-group {
     display: flex;
@@ -94,23 +102,51 @@ form {
     text-align: left;
     /* overflow: hidden; */
 }
+label {
+    font-size: 12px;
+    font-family: 'Open Sans', Verdana, Arial, sans-serif;
+    color: #333;
+    margin-bottom: 2px;
+}
 input {
     background-color: #f0f0f0;
-    width: 100%;
+    width: inherit;
     height: 46px;
-    border: none;
+    border: 2px solid #f0f0f0;
     font-size: 14px;
     font-family: 'Open Sans', Verdana, Arial, sans-serif;
     color: #333;
     padding-left: 15px;
     border-left: 3px solid #f9a121;
 }
-input:focus {
-    outline-style: none;
-}
+
 input.button {
+    margin-top: -10px;
+    width: 100%;
     text-align: center;
     background-color: #00AEF0;
     color: white;
     font-size: 14px;
+}
+div.links {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+a.link, span.link {
+    font-size: 14px;
+    display: block;
+    padding-bottom: 5px;
+    color: #004D63;
+    font-family: 'Open Sans', sans-serif;
+}
+
+footer {
+    text-align: center;
+}
+footer img {
+    width: 120px;
+    margin-top: 25px;
 }

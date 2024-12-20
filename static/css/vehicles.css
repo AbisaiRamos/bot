@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+img {
+    width: 50%;
+    max-width: 400px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+h1 {
+    font-size: 24px;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+h3 {
+    font-size: 15px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    color: #494949;
+}
+h2 {
+    font-size: 20px;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.client-data {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.input-group {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 2px;
+    margin-top: 8px;
+}
+.input-group label::after {
+    content: "*";
+    color: red;
+    margin-left: 3px;
+}
+.input-group input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #979797;
+    border-radius: 5px;
+    font-size: 16px;
+}
+select {
+    background-color: inherit;
+}
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #002855;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+.submit-button:hover {
+    background-color: #ff6600;
+}
+
+footer {
+    background-color: #002855;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    pad: 20px;
+}
+footer ul {
+    width: 60%;
+    text-align: center;
+    padding: 40px;
+}
+footer ul li {
+    list-style: none;
+    display: block;
+    text-align: left;
+    font-size: 14px;
+}
