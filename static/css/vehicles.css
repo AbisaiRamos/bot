@@ -57,6 +57,31 @@ body {
     footer ul {
         width: 100%;
     }
+    footer .imgs {
+        width: 100%;
+    }
+    footer .imgs img {
+        width: 100%;
+    }
+    footer .imgs img.marcas {
+        margin: 0px;
+        width: 100%;
+    }
+    footer .imgs img.medias {
+        margin: 0px;
+        width: 100%;
+    }
+    footer .imgs img.sello {
+        margin: 0px;
+        width: 100%;
+    }
+    footer .imgs img.logo-footer {
+        margin: 0px;
+        width: 100%;
+    }
+    footer p.copyright {
+        width: 100%;
+    }
     
 }
 
@@ -190,7 +215,6 @@ footer {
     margin-top: 0px;
 }
 footer ul {
-    width: 60%;
     text-align: center;
     padding: 40px;
     margin-top: 30px;
