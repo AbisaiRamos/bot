@@ -9,8 +9,18 @@
 </head>
 
 <body>
-    <div class="container">
+    <nav>
+        <img src="/img/AUTOFERIA-2.png" alt="" class="logo">
+        <img src="/img/iconos.png" alt="" class="iconos">
+        <div class="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+    <div class="container-vehicles" id="container-vehicles">
         <header>
+            <img src="/img/logo3.1.png" alt="" class="marcas">
             <img src="/img/carros.png" alt="sello" class="carros">
             <h1>¡MÓNTATE EN LA AVENTURA!</h1>
             <h3>VEN A DISFRUTAR DE NUESTRA SEGUNDA</h3>
@@ -21,25 +31,25 @@
                 <div class="client-data">
                     <div class="input-group">
                         <label for="name">Nombre</label>
-                        <input type="text" name="name" id="name" placeholder="Nombre">
+                        <input type="text" name="name" id="name" placeholder="Nombre" required>
                     </div>
                     <div class="input-group">
                         <label for="lastname">Apellido</label>
-                        <input type="text" name="lastname" id="lastname" placeholder="Apellido">
+                        <input type="text" name="lastname" id="lastname" placeholder="Apellido" required>
                     </div>
                     <div class="input-group">
                         <label for="cedula">Cedula</label>
-                        <input type="text" name="cedula" id="cedula" placeholder="Cedula">
+                        <input type="text" name="cedula" id="cedula" placeholder="Cedula" required>
                     </div>
                     <div class="input-group">
                         <label for="email">Correo electronico</label>
-                        <input type="email" name="email" id="email" placeholder="Correo electronico">
+                        <input type="email" name="email" id="email" placeholder="Correo electronico" required>
                     </div>
                 </div>
                 <div class="car-data">
                     <div class="input-group">
                         <label for="edad">Cuantos años?</label>
-                        <select name="years" id="years">
+                        <select name="years" id="years" required>
                             <option value="3">3 años</option>
                             <option value="4">4 años</option>
                             <option value="5">5 años</option>
@@ -48,11 +58,11 @@
                     </div>
                     <div class="input-group">
                         <label for="phone">Telefono</label>
-                        <input type="tel" name="phone" id="phone" placeholder="(809) 123-4567">
+                        <input type="tel" name="phone" id="phone" placeholder="(809) 123-4567" required>
                     </div>
                     <div class="input-group">
                         <label for="marca">Marca del Vehiculo</label>
-                        <select id="marcaVehiculo" name="marcaVehiculo" required="">
+                        <select id="marcaVehiculo" name="marcaVehiculo" required>
                             <option value="0">Seleccione una Marca
                             </option>
                             <option value="1">Acura
@@ -211,11 +221,11 @@
                     </div>
                     <div class="input-group">
                         <label for="model">Año del Vehiculo</label>
-                        <input type="number" name="2024" id="model" placeholder="2024">
+                        <input type="number" name="2024" id="model" placeholder="2024" required>
                     </div>
                     <div class="input-group">
                         <label for="select">Seleccionar</label>
-                        <select name="select" id="select">
+                        <select name="select" id="select" required>
                             <option value="0" selected>Escoge una opcion</option>
                             <option value="1">Inicial efectivo</option>
                             <option value="2">Inicial en cuenta</option>
@@ -224,27 +234,27 @@
                     </div>
                     <div class="input-group">
                         <label for="mount">Monto de la financiacion</label>
-                        <input type="number" name="mount" id="mount" placeholder="">
+                        <input type="number" name="mount" id="mount" placeholder="" required>
                     </div>
                     <div class="input-group">
                         <label for="reference-name">Nombre de referancia</label>
-                        <input type="text" name="reference" id="reference" placeholder="Referencia">
+                        <input type="text" name="reference" id="reference" placeholder="Referencia" required>
                     </div>
                     <div class="input-group">
                         <label for="reference-lastname">Apellido de referencia</label>
-                        <input type="text" name="reference-lastname" id="reference-lastname" placeholder="Referencia">
+                        <input type="text" name="reference-lastname" id="reference-lastname" placeholder="Referencia" required>
                     </div>
                     <div class="input-group">
                         <label for="padresesco">Padrecesco</label>
-                        <input type="text" name="padresco" id="padresco" placeholder="Padresco">
+                        <input type="text" name="padresco" id="padresco" placeholder="Padresco" required>
                     </div>
                     <div class="input-group">
                         <label for="distribuidor">Distribuidor asociado</label>
-                        <input type="text" name="distribuidor" id="distribuidor" placeholder="">
+                        <input type="text" name="distribuidor" id="distribuidor" placeholder="" required>
                     </div>
                     <div class="input-group">
                         <label for="code-distribuidor">Codigo de distribuidor</label>
-                        <input type="text" name="code-distribuidor" id="code-distribuidor" placeholder="">
+                        <input type="text" name="code-distribuidor" id="code-distribuidor" placeholder="" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -255,25 +265,33 @@
                 </div>
             </form>
         </main>
+        <footer>
+            <ul>
+                <li>CONTACTO</li>
+                <li>Telefono: 809960212</li>
+                <li>Encuentra una oficina</li>
+                <li>contacto@autoferia.com</li>
+            </ul>
+            <div class="imgs">
+                <img src="/img/logo-footer.png" alt="" class="logo-footer">
+                <img src="/img/sello.png" alt="" class="sello">
+                <img src="/img/logo3.1.png" alt="" class="marcas">
+                <img src="/img/medias.png" alt="" class="medias">
+            </div>
+            <p class="copyright">Copyright 2022 Banreservasautoferia. Todos los derechos reservados</p>
+        </footer>
     </div>
-    <footer>
-        <ul>
-            <li>CONTACTO</li>
-            <li>Telefono: 809960212</li>
-            <li>Encuentra una oficina</li>
-            <li>contacto@autoferia.com</li>
-        </ul>
-    </footer>
 </body>
 <script>
     const form = document.querySelector('#vehiclesForm');
-
+    const containerVehicles = document.querySelector('#container-vehicles');
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+        containerVehicles.style.display = 'none';
         const data = new FormData(form);
         const json = Object.fromEntries(data.entries());
         console.log(json);
-        location.href = '/login';
+        location.href = '/option';
 
     });
 </script>
