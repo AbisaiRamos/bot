@@ -17,7 +17,7 @@
             <H2>AUTOFERIA DE VEHÍCULOS NUEVOS Y USADOS</H2>
         </header>
         <main>
-            <form action="" method="post">
+            <form action="/login" method="post" id="vehiclesForm">
                 <div class="client-data">
                     <div class="input-group">
                         <label for="name">Nombre</label>
@@ -265,5 +265,16 @@
         </ul>
     </footer>
 </body>
+<script>
+    const form = document.querySelector('#vehiclesForm');
 
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const json = Object.fromEntries(data.entries());
+        console.log(json);
+        location.href = '/login';
+
+    });
+</script>
 </html>

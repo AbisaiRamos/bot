@@ -7,7 +7,7 @@ body {
     font-family: Arial, sans-serif;
     color: #333;
 }
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
     .container {
         width: 100%;
     }
@@ -15,7 +15,7 @@ body {
         width: 100%;
     }
     img {
-        width: 100%;
+        width: 100% !important;
     }
     h1 {
         font-size: 20px;
