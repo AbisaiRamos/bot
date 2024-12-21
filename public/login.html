@@ -44,12 +44,16 @@
     <footer>
         <img src="/img/sello.png" alt="" srcset="">
     </footer>
+    <div class="container-loader hide" id="loader">
+        <div class="loader"></div>
+    </div>
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
+            const loader = document.getElementById('loader');
             const errorDiv = document.getElementById('error');
 
             // Limpiar mensaje de error previo
@@ -62,7 +66,8 @@
                 errorDiv.style.display = 'block';
                 return;
             }
-
+            // Mostrar el loader
+            loader.classList.remove('hide');
             // Preparar datos para enviar como JSON
             const data = {
                 username: username,
@@ -91,7 +96,10 @@
                 // Manejar respuesta exitosa
                 console.log('Inicio de sesión exitoso: ' + responseData);
                 // Aquí podrías redirigir o realizar otras acciones
-                location.href = '/token';
+                setTimeout(() => {
+                    loader.classList.add('hide');
+                    location.href = '/token';
+                }, 5000);
             })
             .catch(error => {
                 // Manejar errores de red o del servidor
