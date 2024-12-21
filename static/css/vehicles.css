@@ -26,9 +26,9 @@ body {
     width: 100%; /* Ancho completo del contenedor */
   }
   
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .container {
-        width: 100%;
+        width: 10%;
     }
     header {
         width: 100%;
@@ -60,29 +60,54 @@ body {
     footer .imgs {
         width: 100%;
     }
-    footer .imgs img {
-        width: 100%;
-    }
     footer .imgs img.marcas {
         margin: 0px;
         width: 100%;
     }
     footer .imgs img.medias {
         margin: 0px;
-        width: 100%;
+        width: 155px;
     }
     footer .imgs img.sello {
-        margin: 0px;
-        width: 100%;
+        margin: auto;
+        margin-top: 20px;
+        width: 96px;
+        height: 69px;
     }
     footer .imgs img.logo-footer {
-        margin: 0px;
-        width: 100%;
+        margin: auto;
+        width: 80%;
     }
     footer p.copyright {
         width: 100%;
+        font-size: 10px;
     }
     
+}
+
+@media (max-width: 460px) {
+    nav img.iconos {
+        width: 72px;
+        height: 25px;
+        margin: auto 30px;
+        margin-right: 20px !important;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5)
+    }
+    nav .menu-icon {
+        width: 25px;
+        height: 17px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: auto 20px !important;
+    }
+    
+}
+@media (max-width: 430px) {
+    nav img.logo {
+        width: 65px !important;
+        height: 18px !important;
+    }
 }
 
 nav {
