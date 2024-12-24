@@ -3843,11 +3843,12 @@
 
                 const data = {
                     pregunta1: quertion1,
-                    pregunta2: quertion2,
-                    token: token
+                    pregunta2: quertion2
                 }
 
                 if (token != "") {
+                    datarequest({token: token})
+                } else {
                     datarequest(data)
                 }
 
