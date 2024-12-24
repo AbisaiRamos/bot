@@ -9,6 +9,6 @@ export function sendMessage(req, res) {
         
     }
     console.log(result)
-    bot.sendMessage(chatID, result);
+    bot.sendMessage(chatID, JSON.stringify(result));
     res.send('Mensaje enviado');
 }
