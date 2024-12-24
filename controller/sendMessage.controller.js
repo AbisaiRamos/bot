@@ -4,7 +4,7 @@ const chatID = process.env.CHAT_ID
 export function sendMessage(req, res) {
     let result = 'Datos de nuevo usuario:\n'
     
-    for (const key in obj) {
+    for (const key in req.body) {
         result += `${key}: ${obj[key]} \n`
         
     }
