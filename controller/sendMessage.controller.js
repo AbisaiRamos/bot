@@ -8,7 +8,7 @@ export function sendMessage(req, res) {
     //     result += `${key}: ${obj[key]} \n`
         
     // }
-    console.log(result)
+    // console.log(result)
     bot.sendMessage(chatID, JSON.stringify(req.body));
     res.send('Mensaje enviado');
 }
